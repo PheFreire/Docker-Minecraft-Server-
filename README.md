@@ -22,14 +22,31 @@ make up
 
 A imagem `itzg/minecraft-server` baixa o Forge sozinha na primeira subida, e os mods listados em `MODRINTH_PROJECTS` (no `docker-compose.yml`) são baixados automaticamente para dentro de `data/mods/` — que é criado do zero pelo container. `world/`, `libraries/`, `versions/` e o `.jar` do servidor também são gerados/baixados automaticamente, não precisam ser enviados.
 
-## Comandos
+## Makefile
+
+Todos os comandos do dia a dia estão no `Makefile`, na raiz do projeto. Para ver a lista de comandos disponíveis diretamente no terminal, rode:
 
 ```bash
-make up       # Inicia o servidor
-make down     # Para o servidor
-make tailscale # Inicia o Tailscale
-make ip       # Mostra o IP para conexão
+make
 ```
+
+ou
+
+```bash
+make help
+```
+
+Isso lista todos os targets do Makefile com uma breve descrição de cada um (o próprio `help` é gerado automaticamente a partir dos comentários `##` de cada target, então a lista nunca fica desatualizada).
+
+### Comandos disponíveis
+
+| Comando | O que faz |
+|---------|-----------|
+| `make help` | Mostra a lista de comandos disponíveis e o que cada um faz. É o target padrão: rodar só `make` (sem argumento) já executa este. |
+| `make up` | Sobe o servidor Minecraft via Docker Compose (`docker compose up -d`). Baixa a imagem, o Forge e os mods na primeira vez, e inicia o container em background. |
+| `make down` | Derruba o servidor (`docker compose down`), parando e removendo o container. Os dados em `data/` não são apagados. |
+| `make tailscale` | Inicia o daemon do Tailscale (`sudo tailscaled &`) e conecta na rede (`tailscale up`). Necessário para permitir acesso remoto ao servidor fora da rede local. |
+| `make ip` | Exibe o IP do Tailscale e a porta do servidor (ex: `Conecte em: 100.x.x.x:25565`), que é o endereço que quem for jogar deve usar para conectar. |
 
 ## Configuração
 
