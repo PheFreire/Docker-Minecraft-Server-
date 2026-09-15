@@ -13,7 +13,8 @@ Não é preciso enviar a pasta `data/` para quem for subir um servidor novo. Bas
 
 - `docker-compose.yml`
 - `example.env` (copiar para `.env` e ajustar se quiser)
-- `rodar.txt` (opcional — script para instalar o Forge e os mods no **cliente**, para quem for jogar)
+- `rodar.txt` (opcional — script para instalar o Forge e os mods no **cliente** Mac/Linux, para quem for jogar)
+- `rodar-windows.txt` (opcional — mesma coisa, mas para **cliente** Windows)
 
 ```bash
 cp example.env .env
