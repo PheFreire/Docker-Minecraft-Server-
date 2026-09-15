@@ -1,0 +1,27 @@
+services:
+  minecraft:
+    image: itzg/minecraft-server:java17
+    container_name: mineserver
+    restart: unless-stopped
+    ports:
+      - "${BIND_IP:-0.0.0.0}:${SERVER_PORT:-25565}:25565"
+    environment:
+      EULA: "TRUE"
+      VERSION: "${MC_VERSION:-1.20.1}"
+      TYPE: "${SERVER_TYPE:-FORGE}"
+      FORGE_VERSION: "${FORGE_VERSION:-47.2.0}"
+      MEMORY: "${MEMORY:-2G}"
+      MAX_PLAYERS: "${MAX_PLAYERS:-10}"
+      MOTD: "${MOTD:-Servidor Minecraft}"
+      DIFFICULTY: "${DIFFICULTY:-normal}"
+      MODE: "${MODE:-survival}"
+      ONLINE_MODE: "${ONLINE_MODE:-true}"
+      ALLOW_FLIGHT: "false"
+      SPAWN_PROTECTION: "16"
+      VIEW_DISTANCE: "${VIEW_DISTANCE:-10}"
+      TZ: "America/Sao_Paulo"
+      MODRINTH_PROJECTS: "fALzjamp,2cMuAZAp,qa2H4BS9,jJfV67b1,LNytGWDc,sk9rgfiA,uXXizFIs,nmDcB62a"
+    volumes:
+      - ./data:/data
+    stdin_open: true
+    tty: true

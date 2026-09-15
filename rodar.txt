@@ -1,0 +1,41 @@
+# ============================================================
+#  SETUP MINECRAFT FORGE 1.20.1 + MODS
+# ============================================================
+
+# PASSO 1 — Baixar o instalador do Forge 1.20.1
+curl -L -o ~/Downloads/forge-1.20.1-installer.jar \
+  "https://maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.2.0/forge-1.20.1-47.2.0-installer.jar"
+
+# PASSO 2 — Instalar o Forge
+java -jar ~/Downloads/forge-1.20.1-installer.jar
+
+# PASSO 3 — Criar a pasta de mods
+mkdir -p ~/Library/Application\ Support/minecraft/mods
+
+# PASSO 4 — Baixar todos os mods do servidor
+cd ~/Library/Application\ Support/minecraft/mods
+
+curl -L -o Chunky-1.3.146.jar \
+  "https://cdn.modrinth.com/data/fALzjamp/versions/4FTDk9wv/Chunky-1.3.146.jar"
+
+curl -L -o alexsmobs-1.22.9.jar \
+  "https://cdn.modrinth.com/data/2cMuAZAp/versions/XoIASRVU/alexsmobs-1.22.9.jar"
+
+curl -L -o canary-mc1.20.1-0.3.3.jar \
+  "https://cdn.modrinth.com/data/qa2H4BS9/versions/lauzXB0n/canary-mc1.20.1-0.3.3.jar"
+
+curl -L -o citadel-2.6.3-1.20.1.jar \
+  "https://cdn.modrinth.com/data/jJfV67b1/versions/lTAAe4sZ/citadel-2.6.3-1.20.1.jar"
+
+curl -L -o create-1.20.1-0.5.1.j.jar \
+  "https://cdn.modrinth.com/data/LNytGWDc/versions/6R069CcK/create-1.20.1-0.5.1.j.jar"
+
+curl -L -o "embeddium-0.3.31+mc1.20.1.jar" \
+  "https://cdn.modrinth.com/data/sk9rgfiA/versions/UTbfe5d1/embeddium-0.3.31%2Bmc1.20.1.jar"
+
+curl -L -o ferritecore-6.0.1-forge.jar \
+  "https://cdn.modrinth.com/data/uXXizFIs/versions/DG5Fn9Sz/ferritecore-6.0.1-forge.jar"
+
+curl -L -o "modernfix-forge-5.27.44+mc1.20.1.jar" \
+  "https://cdn.modrinth.com/data/nmDcB62a/versions/VidbIJB9/modernfix-forge-5.27.44%2Bmc1.20.1.jar"
+
